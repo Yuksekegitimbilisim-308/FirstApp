@@ -1,0 +1,37 @@
+﻿@model Personel
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.1/js/bootstrap.min.js"></script>
+
+<div style="display:flex;justify-content:center;">
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingOne">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    Güncellenecek Personel Bilgileri
+                </button>
+            </h2>
+            <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    <div class="card" style="width: 50rem;">
+                        <div class="card-header">
+                            <h4 class="text-center">Personel Bilgileri</h4>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                                <strong>Personel No :</strong> @Model.Id
+                            </li>
+
+                            <li class="list-group-item">
+                                <strong>Ad Soyad    :</strong> @Model.Fullname
+                            </li>
+
+                            <li class="list-group-item">
+                                <strong>Maaş        :</strong> @Model.Salary
+                            </li>
+                            <li class="list-group-item">
+                                <strong>Durumu      :</strong> @Model.IsActive
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+</div>

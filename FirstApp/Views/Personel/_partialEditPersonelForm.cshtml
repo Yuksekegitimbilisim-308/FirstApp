@@ -1,0 +1,35 @@
+﻿@model Personel
+
+
+<form method="post" asp-controller="personel" asp-action="editPersonel">
+    <input  type="hidden" asp-for="Id"/>
+    <div style="display:flex;justify-content:center;">
+        <div class="card" style="width: 50rem;">
+            <div class="card-header">
+                <h4 class="text-center">Personel Bilgileri</h4>
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">
+                    <label class="form-label" for="fullname">Personel Ad Soyad</label>
+                    <input asp-for="Fullname" class="form-control" id="fullname" type="text" placeholder="Ad Soyad" />
+                </li>
+
+                <li class="list-group-item">
+                    <label class="form-label" for="salary">Maaş Bilgisi</label>
+                    <input asp-for="Salary" class="form-control" id="salary" type="text" placeholder="Maaş" />
+                </li>
+
+                <li class="list-group-item">
+                    <input asp-for="IsActive" class="form-check-input" type="checkbox" id="flexCheckDefault">
+                    <label class="form-check-label" for="flexCheckDefault">
+                        Aktiflik Durumu
+                    </label>
+                </li>
+                <li class="list-group-item">
+                    <button type="submit" class="btn btn-outline-success fw-bold" style="width:100%;">Personel Kaydet <i style="font-size:25px;" class="fa-solid fa-person-circle-plus"></i></button>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+</form>

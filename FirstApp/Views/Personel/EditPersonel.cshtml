@@ -1,0 +1,8 @@
+﻿@model PersonelEditViewModel
+@await Html.PartialAsync("PageTitle",Model.PageTitle)
+<hr />
+@await Html.PartialAsync("EditPersonelCurrent", Model.Personel)
+<hr />
+@await Html.PartialAsync("_partialEditPersonelForm",Model.Personel)
+
+@* @await Html.PartialAsync("PersonelList",Model.Personels) *@

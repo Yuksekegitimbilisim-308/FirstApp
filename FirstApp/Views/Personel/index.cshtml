@@ -1,0 +1,59 @@
+﻿@model List<Personel>
+
+<div style="display:flex;flex-direction:column;justify-content:center;align-items:center;">
+    <a asp-controller="personel" asp-action="addpersonel" class="btn btn-success fw-bold" style="width:530px;margin-bottom:15px;">Yeni Personel Ekle</a>
+    <div style="width:540px">
+        <table class="table table-striped table-bordered">
+            <thead>
+                <tr style="font-size:18px;">
+                    <th class="thId text-center">#</th>
+                    <th class="thName text-center">Adı Soyadı</th>
+                    <th class="thSalary text-center">Maaş</th>
+                    <th class="thStatus text-center">Durumu</th>
+                    <th class="thStatus text-center">Aksiyon</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var personel in Model)
+                {
+                    <tr style="font-weight:bold;">
+                        <td class="text-center">@personel.Id</td>
+                        <td>@personel.Fullname</td>
+                        <td class="text-center">@personel.Salary</td>
+                        @if (personel.IsActive)
+                        {
+                            <td class="text-center text-success"><i class="fa-solid fa-circle-check"></i></td>
+                        }
+                        else
+                        {
+                            <td class="text-center text-danger"><i class="fa-solid fa-circle-xmark"></i></td>
+                        }
+                        <td>
+                            <div style="display:flex;flex-direction:column;gap:2px">
+                                <a asp-controller="personel" asp-action="editPersonel" asp-route-id="@personel.Id" class="btn btn-warning btn-sm" style="width:100%;"><i class="fa-solid fa-pen-to-square"></i></a>
+                                <a asp-controller="personel" asp-action="deletePersonel" asp-route-id="@personel.Id" class="btn btn-danger btn-sm" style="width:100%;"><i class="fa-solid fa-trash-can"></i></a>
+                            </div>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+<style>
+    .thId {
+        width: 120px
+    }
+
+    .thName {
+        width: 250px,
+    }
+
+    .thSalary {
+        width: 120px
+    }
+
+    .thStatus {
+        width: 50px
+    }
+</style>
